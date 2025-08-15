@@ -1,4 +1,12 @@
-import { Component, Output, Input, EventEmitter, output } from '@angular/core';
+import { Component, Output, Input, EventEmitter } from '@angular/core';
+
+// type UserObj = { // id: string; // avatar: string; // name: string; // };
+
+interface UserObj {
+  id: string;
+  avatar: string;
+  name: string;
+}
 
 @Component({
   selector: 'app-user',
@@ -6,16 +14,14 @@ import { Component, Output, Input, EventEmitter, output } from '@angular/core';
   styleUrls: ['./user.css'],
 })
 export class User {
-  @Input({ required: true }) id!: string;
-  @Input({ required: true }) avatar!: string;
-  @Input({ required: true }) name!: string;
+  @Input({ required: true }) user!: UserObj;
   @Output() select = new EventEmitter<string>();
 
   get imagePath() {
-    return 'assets/users/' + this.avatar;
+    return 'assets/users/' + this.user.avatar;
   }
 
   onSelectUser() {
-    this.select.emit(this.id); // ارسال رویداد به والد
+    this.select.emit(this.user.id);
   }
 }
