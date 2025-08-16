@@ -3,7 +3,7 @@ import { Tasks } from '../tasks';
 import { type TaskInerface } from './task.model';
 @Component({
   selector: 'app-task',
-  imports: [Task],
+  imports: [],
   templateUrl: './task.html',
   styleUrl: './task.css',
 })

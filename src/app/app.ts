@@ -7,7 +7,7 @@ import { Tasks } from './tasks/tasks';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, User, Tasks],
+  imports: [Header, User, Tasks],
   templateUrl: './app.html',
   styleUrls: ['./app.css'], // درست شد
 })
