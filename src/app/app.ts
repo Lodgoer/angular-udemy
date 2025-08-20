@@ -1,15 +1,11 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { Header } from './header/header';
-import { User } from './user/user';
 import { DUMMY_USERS } from './dummy-users';
-import { Tasks } from './tasks/tasks';
 
 @Component({
+  standalone: false,
   selector: 'app-root',
-  imports: [Header, User, Tasks],
   templateUrl: './app.html',
-  styleUrls: ['./app.css'], // درست شد
+  styleUrls: ['./app.css'],
 })
 export class App {
   users = DUMMY_USERS;
